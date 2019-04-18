@@ -20,6 +20,7 @@ class Graph extends React.Component {
 	render() {
 		const {form_data, date, location, info} = this.props
 
+
 		return (
 			<div>
 				<div className="container">
