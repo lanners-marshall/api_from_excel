@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from "react-google-charts";
-import Card from './Card.js';
+import CardComponent from './CardComponent.js';
 import '../custom.css';
 import { Header } from 'semantic-ui-react';
 import { connect } from "react-redux";
@@ -18,7 +18,7 @@ class Graph extends React.Component {
 
 
 	render() {
-		const {form_data, date, location} = this.props
+		const {form_data, date, location, info} = this.props
 
 		return (
 			<div>
@@ -32,9 +32,9 @@ class Graph extends React.Component {
           height="400px"
           data={form_data}
         />
-        <div className="container">
-        	{form_data.map(d => {
-        		return <Card />
+        <div className="container flex">
+        	{info.map((info, i) => {
+        		return <CardComponent info={info} key={i} />
         	})}
         </div>
 			</div>
@@ -46,7 +46,8 @@ const mapStateToProps = (state) => {
 	return {
 		form_data: state.school_data.form_data,
 		date: state.school_data.date,
-		location: state.school_data.location
+		location: state.school_data.location,
+		info: state.school_data.info
 	}
 }
 

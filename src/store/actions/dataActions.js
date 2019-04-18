@@ -8,9 +8,15 @@ let format = (ar) => {
     }
   }
 
+  let info = []
+  let obj
+
+
   let counts = {a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0}
 
   for (let i = 0; i < ar.length; i++){
+    obj = {l1: ar[i].learned_1, l2: ar[i].learned_2, l3: ar[i].learned_3, ask: ar[i].question, contact: ar[i].email, feedback: ar[i].feedback}
+    info.push(obj)
     for (let j in counts){
       helper(ar[i], j, counts)
     }
@@ -30,7 +36,7 @@ let format = (ar) => {
   	['Q 10', counts.j, 'brown'],
   ]
 
-  return {data: data, location: ar[0].location, date: ar[0].date}
+  return {data: data, location: ar[0].location, date: ar[0].date, info: info}
 }
 
 export const getSchoolData = () => {
