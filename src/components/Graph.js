@@ -16,10 +16,8 @@ class Graph extends React.Component {
   	this.props.getSchoolData()
   }
 
-
 	render() {
 		const {form_data, date, location, info} = this.props
-
 
 		return (
 			<div>
