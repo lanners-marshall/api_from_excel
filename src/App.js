@@ -3,7 +3,6 @@ import Graph from './components/Graph.js'
 import "./custom.css"
 
 class App extends Component {
-  
   render() {
     return (
       <div className="top">
